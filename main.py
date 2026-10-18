@@ -48,6 +48,12 @@ def cost_per_class(annual_cost, credits):
     return class_cost
 
 
+def cost_per_fast_food():
+    """Give back the cost of fast food for a semester."""
+    cost_of_order = float(input("How much does your usual order cost? "))
+    times_per_month = int(input("How often per month do you go out? "))
+    return cost_of_order * times_per_month * MONTHS_PER_YEAR
+
 # ---- PROGRAM ----
 
 def main():
@@ -64,6 +70,7 @@ def main():
         print("3: cost per class day")
         print("4: cost per credit")
         print("5: cost per CS1430 class")
+        print("6: cost of fast food")
         print("Q: exit")
         choice = input("Choose an option: ")
 
@@ -85,6 +92,12 @@ def main():
         elif choice == "5":
             cost = cost_per_class(annual_cost, credits)
             print(f"One CS1430 class costs ${cost:.2f}")
+        elif choice == "5":
+            cost = cost_per_class(annual_cost, credits)
+            print(f"One CS1430 class costs ${cost:.2f}")
+        elif choice == "6":
+            cost = cost_per_fast_food()
+            print(f"Your fast food bill this semester is: ${cost:.2f}")
         else:
             print("Invalid input. Try again.")
         print("")
